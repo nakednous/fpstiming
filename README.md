@@ -1,7 +1,7 @@
 FPSTiming
 =========
 
-#Description
+# Description
 
 fps-based timing.
 
