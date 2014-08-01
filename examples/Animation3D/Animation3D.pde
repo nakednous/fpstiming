@@ -28,10 +28,14 @@ public void keyPressed() {
     system.setAnimationPeriod(system.animationPeriod()-2);
   if ((key == 'y') || (key == 'Y'))
     system.setAnimationPeriod(system.animationPeriod()+2);
+  if ((key == 'z') || (key == 'Z'))
+    system.toggleAnimation();
   if (key == '+')
     system.setParticlesAnimationPeriod(system.particlesAnimationPeriod()-2);
   if (key == '-')
     system.setParticlesAnimationPeriod(system.particlesAnimationPeriod()+2);
+  if (key == ' ')
+    system.toggleParticlesAnimation();
 }
 
 class ParticleSystem extends AnimatorObject {
@@ -68,5 +72,10 @@ class ParticleSystem extends AnimatorObject {
   
   public long particlesAnimationPeriod() {
     return particle[0].animationPeriod();
+  }
+  
+  public void toggleParticlesAnimation() {
+    for (int i = 0; i < particle.length; i++)
+      particle[i].toggleAnimation();
   }
 }

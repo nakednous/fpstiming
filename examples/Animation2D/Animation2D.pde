@@ -32,6 +32,8 @@ public void keyPressed() {
     system.setAnimationPeriod(system.animationPeriod()-2);
   if (key == '-')
     system.setAnimationPeriod(system.animationPeriod()+2);
+  if (key == ' ')
+    system.toggleAnimation();
 }
 
 class ParticleSystem extends AnimatorObject {
@@ -47,7 +49,6 @@ class ParticleSystem extends AnimatorObject {
     particle = new Particle2D[nbPart];
     for (int i = 0; i < particle.length; i++)
       particle[i] = new Particle2D(parent);
-    startAnimation();
   }
 
   public ParticleSystem(PApplet p) {
