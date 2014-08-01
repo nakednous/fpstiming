@@ -1,4 +1,4 @@
-public class AnimatedParticle extends AnimatedObject {
+public class AnimatedParticle extends AnimatorObject {
   PApplet parent;
   public PVector speed;
   public PVector pos;

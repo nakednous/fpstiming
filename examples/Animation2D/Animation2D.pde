@@ -34,7 +34,7 @@ public void keyPressed() {
     system.setAnimationPeriod(system.animationPeriod()+2);
 }
 
-class ParticleSystem extends AnimatedObject {
+class ParticleSystem extends AnimatorObject {
   int nbPart;
   Particle2D[] particle;
   PApplet parent;
