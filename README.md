@@ -3,65 +3,49 @@ FPSTiming
 
 # Description
 
-fps-based timing.
+FPS-based timing.
 
-A sequential single-threaded timer on top of which Proscene animations 
-and timing routines are built.
+Timing handler holding a pool of single-threaded timers and a pool of animator objects.
 
-# Hacking
+# Key features
 
-## Initial setup (you don't need this!)
+* *Tested* under Linux, Mac OSX and Windows, and properly works with the JAVA2D, P2D and P3D **Processing** renderers. No special dependencies or requirements needed (apart of course from [Processing-2.x](http://processing.org/ Processing-1.5.1)).
+* It supports all major **Processing** flavours: [Desktop](https://github.com/remixlab/proscene), [Android](https://github.com/remixlab/proscene.droid) and (soon) JS.
+* API design that provides seemless integration with **Processing**, and allows extensibility of its key features.
+* Remarkably-simple, tiny memory footprint sequential timing.
+* It provides _single-threaded timers_, offering a replacement of [java util timers](http://docs.oracle.com/javase/7/docs/api/java/util/Timer.html) which require multi-threading.
+* Compatible with [gwt jre emulation](http://www.gwtproject.org/doc/latest/RefJreEmulation.html) which is required by our JS port. 
+* It provides _timing-tasks_ which may be scheduled for one-time execution, or for repeated execution at regular intervals.
+* Animation framework.
+* Handy set of complete documented [examples](https://github.com/nakednous/fpstiming/wiki) that illustrates the use of the package.
+* A complete [reference documentation](http://otrolado.info/fpstimingApi/).
+* Active support and continuous discussions led by the [Processing community](http://forum.processing.org/two/).
+* Last but not least, released as free software under the terms of the [GPL-v3](http://www.gnu.org/licenses/gpl.html).
 
-First (and only) time setup. This is just for documentation purposes. Please visit the next sections.
+# Usage
 
-```sh
-git clone https://github.com/remixlab/fpstiming.git
-cd fpstiming
-git remote add -f fpstiming https://github.com/remixlab/fpstiming_tree.git
-git subtree add --prefix src/remixlab/fpstiming fpstiming master --squash
-```
+Usage is simple:
 
-## Read-only access setup
+1. Instantiate a [TimingHandler](http://otrolado.info/fpstimingApi/remixlab/fpstiming/TimingHandler.html).
+2. Declare/schedule some [timing tasks](http://otrolado.info/fpstimingApi/remixlab/fpstiming/TimingTask.html) and [register](http://otrolado.info/fpstimingApi/remixlab/fpstiming/TimingHandler.html#registerTask(remixlab.fpstiming.TimingTask)) them at the _TimingHandler_.
+3. Implement your [animator objects](http://otrolado.info/fpstimingApi/remixlab/fpstiming/AnimatorObject.html) and [register](http://otrolado.info/fpstimingApi/remixlab/fpstiming/TimingHandler.html#registerAnimator(remixlab.fpstiming.Animator)) them at the _TimingHandler_.
+4. Attach a call to [handle()](http://otrolado.info/fpstimingApi/remixlab/fpstiming/TimingHandler.html#handle()) at the end of your main event (drawing) loop.
 
-Use it as any other basic github repo, i.e.,:
+# Installation
 
-```sh
-# clone it:
-git clone https://github.com/remixlab/fpstiming.git
-cd fpstiming
-# pull changes in:
-# for pull requests simply refer to: https://help.github.com/articles/using-pull-requests
-```
+Download it [here](https://github.com/nakednous/fpstiming/releases/download/v-1.0.0/fpstiming-1.0.0.zip) and extract it to your sketchbook `libraries` folder.
 
-## Read-write access setup
+For detailed Processing third party library installation instructions check [here](http://wiki.processing.org/w/How_to_Install_a_Contributed_Library#Manual_Install).
 
-Clone the repo and add the remotes (here we refer to them as ["subtrees"](http://blogs.atlassian.com/2013/05/alternatives-to-git-submodule-git-subtree/)):
+**Note** that **FPSTiming** provides timing handling to [Proscene-2](http://nakednous.github.io/projects/proscene/) and is packaged along side with it.
+This *stand-alone* release is thus incompatible with [Proscene-2](http://nakednous.github.io/projects/proscene/). If you've already installed
+[Proscene-2](http://nakednous.github.io/projects/proscene/) you don't need to install **FPSTiming**, but can just try the [examples](https://github.com/nakednous/fpstiming/tree/master/examples).
+Otherwise, you may uninstall [Proscene-2](http://nakednous.github.io/projects/proscene/) first and then install ***FPSTiming**.
 
-```sh
-git clone https://github.com/remixlab/fpstiming.git
-cd fpstiming
-git remote add -f fpstiming https://github.com/remixlab/fpstiming_tree.git
-```
+# Documentation
 
-Update from time to time:
-
-```sh
-#fetching command:
-git fetch fpstiming master
-git subtree pull --prefix src/remixlab/fpstiming fpstiming master --squash
-```
-
-To contribute back to upstream:
-
-```sh
-git push
-```
-
-To contribute to a the fpstiming subtree
-
-```sh
-git subtree push --prefix=src/remixlab/fpstiming fpstiming master
-```
+* [Wiki](https://github.com/nakednous/fpstiming/wiki) containing a tutorial.
+* [API](http://otrolado.info/fpstimingApi) which is also available with the release zip file.
 
 # Author, core developer and maintainer
 
