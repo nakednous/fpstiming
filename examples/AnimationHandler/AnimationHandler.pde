@@ -1,3 +1,14 @@
+/**
+ * Animation Handler.
+ * by Jean Pierre Charalambos.
+ * 
+ * Documentation found on the online tutorial: https://github.com/nakednous/fpstiming/wiki/1.3.-AnimationHandler
+ *
+ * Press '+' to speed up the animation.
+ * Press '-' to speed down the animation.
+ * Press ' ' (the space bar) to toggle the animation.
+ */
+
 import remixlab.fpstiming.*;
 import java.lang.reflect.Method;
 

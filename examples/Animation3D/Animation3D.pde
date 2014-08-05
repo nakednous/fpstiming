@@ -1,3 +1,17 @@
+/**
+ * Animation 2D.
+ * by Jean Pierre Charalambos.
+ * 
+ * Documentation found on the online tutorial: https://github.com/nakednous/fpstiming/wiki/1.1.-Animation2D
+ *
+ * Press 'x' to speed up the camera animation.
+ * Press 'y' to speed down the camera animation.
+ * Press 'z' (the space bar) to toggle the camera animation.
+ * Press '+' to speed up the particles animation.
+ * Press '-' to speed down the particles animation.
+ * Press ' ' (the space bar) to toggle the particles animation.
+ */
+
 import remixlab.fpstiming.*;
 
 ParticleSystem system;

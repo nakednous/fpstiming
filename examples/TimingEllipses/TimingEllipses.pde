@@ -1,3 +1,14 @@
+/**
+ * Timing Ellipses.
+ * by Jean Pierre Charalambos.
+ * 
+ * Documentation found on the online tutorial: https://github.com/nakednous/fpstiming/wiki/1.4.-TimingEllipses
+ *
+ * Press 'c' to toggle the ellipses' color timer.
+ * Press 'p' to toggle the ellipses' positioning timer.
+ * Press 'r' to toggle the ellipses' set-radii timer.
+ */
+
 import remixlab.fpstiming.*;
 
 Ellipse [] ellipses;
