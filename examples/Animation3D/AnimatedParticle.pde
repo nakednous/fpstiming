@@ -1,13 +1,11 @@
 public class AnimatedParticle extends AnimatorObject {
-  PApplet parent;
   public PVector speed;
   public PVector pos;
   public int age;
   public int ageMax;
 
-  public AnimatedParticle(PApplet p) {
-    super(((Animation3D)p).handler);
-    parent = p;
+  public AnimatedParticle(TimingHandler h) {
+    super(h);
     speed = new PVector();
     pos = new PVector();
     init();
@@ -29,16 +27,16 @@ public class AnimatedParticle extends AnimatorObject {
   }
 
   public void draw() {    
-    parent.stroke( 255 * ((float) age / (float) ageMax), 255 * ((float) age / (float) ageMax), 255);
-    parent.vertex(pos.x, pos.y, pos.z);
+    stroke( 255 * ((float) age / (float) ageMax), 255 * ((float) age / (float) ageMax), 255);
+    vertex(pos.x, pos.y, pos.z);
   }
 
   public void init() {    
     pos = new PVector(0.0f, 0.0f, 0.0f);
-    float angle = 2.0f * PApplet.PI * parent.random(1);
-    float norm = 0.04f * parent.random(1);
-    speed = new PVector(norm * PApplet.cos(angle), norm  * PApplet.sin(angle), parent.random(1));
+    float angle = 2.0f * PI * random(1);
+    float norm = 0.04f * random(1);
+    speed = new PVector(norm * cos(angle), norm  * sin(angle), random(1));
     age = 0;
-    ageMax = 50 + (int) parent.random(100);
+    ageMax = 50 + (int) random(100);
   }
 }

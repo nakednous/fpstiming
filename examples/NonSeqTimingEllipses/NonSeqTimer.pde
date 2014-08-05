@@ -56,7 +56,7 @@ class NonSeqTimer implements Timer {
   }
 
   @Override
-    public void stop() {
+  public void stop() {
     if (timer != null) {
       timer.cancel();
       timer.purge();
@@ -65,7 +65,7 @@ class NonSeqTimer implements Timer {
   }
 
   @Override
-    public boolean isActive() {
+  public boolean isActive() {
     return timer != null && active;
   }
 
@@ -80,7 +80,7 @@ class NonSeqTimer implements Timer {
   }
 
   @Override
-    public boolean isSingleShot() {
+  public boolean isSingleShot() {
     return runOnlyOnce;
   }
 

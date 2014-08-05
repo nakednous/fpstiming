@@ -6,7 +6,7 @@ TimingHandler handler;
 
 public void setup() {
   size(640, 360, P2D);
-  system = new ParticleSystem(this);
+  system = new ParticleSystem();
   handler = new TimingHandler(system);
   //new two lines:
   system.addAnimationHandler(this, "animateSystem");
@@ -56,24 +56,12 @@ class ParticleSystem extends AnimatorObject {
 
   int nbPart;
   Particle2D[] particle;
-  PApplet parent;
 
-  // We need to call super(p) to instantiate the base class
-  public ParticleSystem(PApplet p, TimingHandler handler) {
-    super(handler);
-    parent = p;
+  public ParticleSystem() {
     nbPart = 2000;
     particle = new Particle2D[nbPart];
     for (int i = 0; i < particle.length; i++)
-      particle[i] = new Particle2D(parent);
-  }
-
-  public ParticleSystem(PApplet p) {
-    parent = p;
-    nbPart = 2000;
-    particle = new Particle2D[nbPart];
-    for (int i = 0; i < particle.length; i++)
-      particle[i] = new Particle2D(parent);
+      particle[i] = new Particle2D();
   }
 
   // animate() is gone
@@ -86,7 +74,7 @@ class ParticleSystem extends AnimatorObject {
         return true;
       } 
       catch (Exception e) {
-        PApplet.println("Something went wrong when invoking your " + animateHandlerMethodName + " method");
+        println("Something went wrong when invoking your " + animateHandlerMethodName + " method");
         e.printStackTrace();
         return false;
       }
@@ -101,7 +89,7 @@ class ParticleSystem extends AnimatorObject {
       animateHandlerMethodName = methodName;
     } 
     catch (Exception e) {
-      PApplet.println("Something went wrong when registering your " + methodName + " method");
+      println("Something went wrong when registering your " + methodName + " method");
       e.printStackTrace();
     }
   }

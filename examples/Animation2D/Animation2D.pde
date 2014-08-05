@@ -5,7 +5,7 @@ TimingHandler handler;
 
 public void setup() {
   size(640, 360, P2D);
-  system = new ParticleSystem(this);
+  system = new ParticleSystem();
   handler = new TimingHandler(system);
   system.startAnimation();
   smooth();
@@ -39,24 +39,12 @@ public void keyPressed() {
 class ParticleSystem extends AnimatorObject {
   int nbPart;
   Particle2D[] particle;
-  PApplet parent;
 
-  // We need to call super(p) to instantiate the base class
-  public ParticleSystem(PApplet p, TimingHandler handler) {
-    super(handler);
-    parent = p;
+  public ParticleSystem() {
     nbPart = 2000;
     particle = new Particle2D[nbPart];
     for (int i = 0; i < particle.length; i++)
-      particle[i] = new Particle2D(parent);
-  }
-
-  public ParticleSystem(PApplet p) {
-    parent = p;
-    nbPart = 2000;
-    particle = new Particle2D[nbPart];
-    for (int i = 0; i < particle.length; i++)
-      particle[i] = new Particle2D(parent);
+      particle[i] = new Particle2D();
   }
 
   // Define here your animation.

@@ -6,7 +6,7 @@ public TimingHandler handler;
 public void setup() {
   size(640, 360, P3D);
   handler = new TimingHandler();
-  system = new ParticleSystem(this, handler);
+  system = new ParticleSystem(handler);
   smooth();
 }
 
@@ -41,17 +41,15 @@ public void keyPressed() {
 class ParticleSystem extends AnimatorObject {
   int nbPart;
   AnimatedParticle[] particle;
-  PApplet parent;
   int rotation;
 
   // We need to call super(p) to instantiate the base class
-  public ParticleSystem(PApplet p, TimingHandler handler) {
+  public ParticleSystem(TimingHandler handler) {
     super(handler);
-    parent = p;
     nbPart = 2000;
     particle = new AnimatedParticle[nbPart];
     for (int i = 0; i < particle.length; i++)
-      particle[i] = new AnimatedParticle(parent);
+      particle[i] = new AnimatedParticle(handler);
     startAnimation();
   }
 
