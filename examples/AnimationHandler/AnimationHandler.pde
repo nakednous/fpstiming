@@ -1,7 +1,7 @@
 /**
  * Animation Handler.
  * by Jean Pierre Charalambos.
- * 
+ *
  * Documentation found on the online tutorial: https://github.com/nakednous/fpstiming/wiki/1.3.-AnimationHandler
  *
  * Press '+' to speed up the animation.
