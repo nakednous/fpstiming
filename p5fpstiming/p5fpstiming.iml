@@ -36,6 +36,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="bias" scope="PROVIDED" />
+    <orderEntry type="module" module-name="fpstiming" scope="PROVIDED" />
   </component>
 </module>

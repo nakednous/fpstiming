@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/fpstiming.iml" filepath="$PROJECT_DIR$/fpstiming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p5fpstiming/p5fpstiming.iml" filepath="$PROJECT_DIR$/p5fpstiming/p5fpstiming.iml" />
     </modules>
   </component>
 </project>
