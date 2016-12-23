@@ -13,6 +13,8 @@
     </facet>
     <facet type="gwt" name="GWT">
       <configuration>
+        <setting name="compilerMaxHeapSize" value="1024" />
+        <setting name="gwtScriptOutputStyle" value="DETAILED" />
         <setting name="gwtSdkUrl" value="file://$USER_HOME$/.lib/gwt" />
       </configuration>
     </facet>
@@ -25,5 +27,16 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="gwt-user" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.lib/gwtexporter-2.5.0-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.lib/gwtexporter-2.5.0-SNAPSHOT.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
