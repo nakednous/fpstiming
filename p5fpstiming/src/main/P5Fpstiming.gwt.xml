@@ -9,8 +9,8 @@
     <inherits name='com.google.gwt.user.User'/>
     <inherits name='com.google.gwt.user.theme.clean.Clean'/>
     <!-- Specify the app entry point class. -->
-    <entry-point class='main.client.P5Bias'/>
-    <inherits name="remixlab.Bias"/>
+    <entry-point class='main.client.P5Fpstiming'/>
+    <inherits name="remixlab.Fpstiming"/>
     <inherits name='org.timepedia.exporter.Exporter'/>
     <set-property name="export" value="yes"/>
     <source path='client'/>

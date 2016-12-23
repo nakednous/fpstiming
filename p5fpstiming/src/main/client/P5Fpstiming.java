@@ -17,7 +17,7 @@ import com.google.gwt.core.client.EntryPoint;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class P5Bias implements EntryPoint {
+public class P5Fpstiming implements EntryPoint {
   @Override
   public void onModuleLoad() {
     ExporterUtil.exportAll();
